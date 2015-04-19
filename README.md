@@ -1,0 +1,2 @@
+# iblogscript
+export script ibeexpert
