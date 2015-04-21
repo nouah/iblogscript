@@ -166,13 +166,13 @@ end;
 procedure TForm1.Button2Click(Sender: TObject);
 begin
 
-IBDatabase2.Connected;
+IBDatabase2.Connected:=true;
 
-//IBScript1.Terminator := '^' ;
-IBScript1.Script.LoadFromFile('d:\tes.sql');
+
+IBScript1.Script.LoadFromFile((ExtractFilePath(Application.ExeName)+'export.sql'));
 IBScript1.ExecuteScript;
 IBScript1.Transaction.CommitRetaining;
-
+ShowMessage('finish');
 end;
 
 procedure TForm1.DELETE(id:Integer);
@@ -197,6 +197,7 @@ END;
 procedure TForm1.Button1Click(Sender: TObject);
 
 begin
+IBDatabase1.Connected:=true;
 Memo1.Clear;
 IBlog_tables.Open;
 IBlog_tables.First;
@@ -220,7 +221,7 @@ end;
 //fin niveau table
 IBlog_tables.Next;
 end;
- Memo1.Lines.SaveToFile('d:\export.sql');
+ Memo1.Lines.SaveToFile((ExtractFilePath(Application.ExeName)+'export.sql'));
 end;
 
 end.

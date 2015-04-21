@@ -50,8 +50,7 @@ object Form1: TForm1
     end
   end
   object IBDatabase1: TIBDatabase
-    Connected = True
-    DatabaseName = 'localhost:gdossier'
+    DatabaseName = 'D:\projets\iblogscript\data\TEST1.GDB'
     Params.Strings = (
       'password=masterkey'
       'user_name=sysdba')
@@ -245,8 +244,7 @@ object Form1: TForm1
     end
   end
   object IBDatabase2: TIBDatabase
-    Connected = True
-    DatabaseName = 'localhost:D:\projets\DOSSIER\data\DATA3.GDB'
+    DatabaseName = 'D:\projets\iblogscript\data\TEST2.GDB'
     Params.Strings = (
       'password=masterkey'
       'user_name=sysdba')
@@ -256,6 +254,7 @@ object Form1: TForm1
     Top = 200
   end
   object IBTransaction2: TIBTransaction
+    DefaultDatabase = IBDatabase2
     Params.Strings = (
       'read_committed'
       'rec_version'
